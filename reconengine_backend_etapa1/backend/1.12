@@ -1,0 +1,9 @@
+Collecting cffi
+  Downloading cffi-2.0.0-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi)
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Downloading cffi-2.0.0-cp312-cp312-win_amd64.whl (183 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Installing collected packages: pycparser, cffi
+
+Successfully installed cffi-2.0.0 pycparser-3.0
