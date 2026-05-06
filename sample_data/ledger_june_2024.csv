@@ -1,0 +1,26 @@
+ref_id,date,description,amount,currency,category
+TXN-20240603-001,2024-06-03,Wire Transfer — Acme Corp Ltd,52000.00,USD,Accounts Receivable
+TXN-20240603-002,2024-06-03,Invoice Payment — Kappa Systems,9800.00,USD,Revenue
+TXN-20240604-003,2024-06-04,Vendor Payment — Epsilon Supplies,14200.00,USD,Accounts Payable
+TXN-20240605-004,2024-06-05,Rent — Office HQ June 2024,6500.00,USD,Operating Expenses
+TXN-20240606-005,2024-06-06,Invoice #INV-2101 — Rho Partners,41000.00,USD,Revenue
+TXN-20240607-006,2024-06-07,Payroll Direct Deposit — June 2024,62500.00,USD,Payroll
+TXN-20240610-007,2024-06-10,Consulting Fees — Alpha Advisory,15000.00,USD,Professional Services
+TXN-20240611-008,2024-06-11,Invoice #INV-2103 — Tau Corp,22750.00,USD,Revenue
+TXN-20240612-009,2024-06-12,Vendor Payment — Upsilon Mfg,33100.00,USD,Accounts Payable
+TXN-20240613-010,2024-06-13,Wire Transfer — Phi Holdings,88000.00,USD,Investments
+TXN-20240614-011,2024-06-14,Invoice #INV-2105 — Chi Global,17500.00,USD,Revenue
+TXN-20240617-012,2024-06-17,Software License Renewal,3600.00,USD,Technology
+TXN-20240618-013,2024-06-18,Invoice #INV-2107 — Psi Ltd,8200.00,USD,Revenue
+TXN-20240619-014,2024-06-19,Tax Payment — Q2 Estimate,42000.00,USD,Tax
+TXN-20240620-015,2024-06-20,Marketing — Digital Campaign,7800.00,USD,Marketing
+TXN-20240621-016,2024-06-21,Invoice #INV-2109 — Omega II,29400.00,USD,Revenue
+TXN-20240624-017,2024-06-24,Loan Repayment — Term Loan A,25000.00,USD,Financing
+TXN-20240625-018,2024-06-25,Invoice #INV-2111 — Acme II,18600.00,USD,Revenue
+TXN-20240626-019,2024-06-26,Equipment Purchase — Server,12500.00,USD,Equipment
+TXN-20240627-020,2024-06-27,Travel Expenses — Sales Team,3100.00,USD,Travel
+TXN-20240628-021,2024-06-28,Invoice #INV-2113 — Zeta II,44200.00,USD,Revenue
+TXN-20240628-022,2024-06-28,Utility Bill — June,1380.20,USD,Operating Expenses
+TXN-20240629-023,2024-06-29,Petty Cash,420.00,USD,Miscellaneous
+TXN-20240630-024,2024-06-30,Interest Income — Savings,485.30,USD,Interest Income
+TXN-20240630-025,2024-06-30,Equipment Lease — June,3200.00,USD,Equipment

@@ -1,0 +1,21 @@
+ref_id,date,description,amount,currency,category
+TXN-2024-P001,2024-07-01,Wire Transfer — Alpha Corp,25000.00,USD,Accounts Receivable
+TXN-2024-P002,2024-07-02,Invoice #2201 — Beta Ltd,8400.00,USD,Revenue
+TXN-2024-P003,2024-07-03,Vendor Payment — Gamma Supplies,12000.00,USD,Accounts Payable
+TXN-2024-P004,2024-07-05,Rent — July 2024,6500.00,USD,Operating Expenses
+TXN-2024-P005,2024-07-08,Invoice #2205 — Delta Corp,19750.00,USD,Revenue
+TXN-2024-P006,2024-07-09,Payroll — July 2024,62500.00,USD,Payroll
+TXN-2024-P007,2024-07-10,Consulting — Epsilon Advisory,15000.00,USD,Professional Services
+TXN-2024-P008,2024-07-12,Invoice #2209 — Zeta Inc,5500.00,USD,Revenue
+TXN-2024-P009,2024-07-15,Equipment Maintenance,2800.00,USD,Equipment
+TXN-2024-P010,2024-07-16,Invoice #2211 — Eta Global,44000.00,USD,Revenue
+TXN-2024-P011,2024-07-17,Vendor Payment — Theta Mfg,18200.00,USD,Accounts Payable
+TXN-2024-P012,2024-07-18,Office Renovation Deposit,35000.00,USD,Capital Expenditure
+TXN-2024-P013,2024-07-22,Invoice #2215 — Iota Ltd,11000.00,USD,Revenue
+TXN-2024-P014,2024-07-23,Tax Instalment — July,15000.00,USD,Tax
+TXN-2024-P015,2024-07-25,Invoice #2217 — Kappa Corp,28500.00,USD,Revenue
+TXN-2024-P016,2024-07-26,Bonus Payment — Staff,22000.00,USD,Payroll
+TXN-2024-P017,2024-07-29,Loan Interest — July,4250.00,USD,Financing
+TXN-2024-P018,2024-07-30,Invoice #2221 — Lambda Inc,9600.00,USD,Revenue
+TXN-2024-P019,2024-07-31,Misc Expenses — July,1750.00,USD,Miscellaneous
+TXN-2024-P020,2024-07-31,Interest Income,510.00,USD,Interest Income

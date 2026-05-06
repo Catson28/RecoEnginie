@@ -1,0 +1,108 @@
+version: "3.9"
+
+# ============================================================
+# ReconEngine — Docker Compose
+# Serviços: frontend (Next.js) + backend (FastAPI) + db (MySQL)
+# ============================================================
+
+services:
+
+  # ── Base de dados MySQL ───────────────────────────────────
+  db:
+    image: mysql:8.0
+    container_name: reconengine_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE:      reconengine
+      MYSQL_USER:          recon_app
+      MYSQL_PASSWORD:      ${MYSQL_PASSWORD:-change_me_in_production}
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql/01_create_database.sql:/docker-entrypoint-initdb.d/01_create_database.sql
+      - ./sql/02_create_tables.sql:/docker-entrypoint-initdb.d/02_create_tables.sql
+      - ./sql/03_views_and_procedures.sql:/docker-entrypoint-initdb.d/03_views_and_procedures.sql
+      - ./sql/06_indexes_performance.sql:/docker-entrypoint-initdb.d/06_indexes_performance.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "recon_app", "-pchange_me_in_production"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - reconengine_net
+
+  # ── Backend FastAPI ───────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: reconengine_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL:                   mysql+pymysql://recon_app:${MYSQL_PASSWORD:-change_me_in_production}@db:3306/reconengine
+      TIER1_DATE_TOLERANCE_DAYS:      ${TIER1_DATE_TOLERANCE_DAYS:-2}
+      TIER2_DATE_TOLERANCE_DAYS:      ${TIER2_DATE_TOLERANCE_DAYS:-5}
+      TIER2_FUZZY_THRESHOLD:          ${TIER2_FUZZY_THRESHOLD:-85.0}
+      TIER3_DATE_TOLERANCE_DAYS:      ${TIER3_DATE_TOLERANCE_DAYS:-7}
+      ALERT_MIN_MATCH_RATE:           ${ALERT_MIN_MATCH_RATE:-0.85}
+      ENABLE_EMAIL_NOTIFICATIONS:     ${ENABLE_EMAIL_NOTIFICATIONS:-false}
+      SMTP_HOST:                      ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT:                      ${SMTP_PORT:-587}
+      SMTP_USER:                      ${SMTP_USER:-}
+      SMTP_PASSWORD:                  ${SMTP_PASSWORD:-}
+      ALERT_TO_EMAILS:                ${ALERT_TO_EMAILS:-}
+      ENABLE_SLACK_NOTIFICATIONS:     ${ENABLE_SLACK_NOTIFICATIONS:-false}
+      SLACK_WEBHOOK_URL:              ${SLACK_WEBHOOK_URL:-}
+      SECRET_KEY:                     ${SECRET_KEY:-change-me-in-production}
+      LOG_LEVEL:                      ${LOG_LEVEL:-INFO}
+      CORS_ORIGINS:                   '["http://localhost:3000","http://frontend:3000"]'
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - reconengine_net
+    volumes:
+      - uploads_data:/app/uploads    # ficheiros CSV/OFX temporários
+
+  # ── Frontend Next.js ──────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: reconengine_frontend
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - reconengine_net
+
+  # ── Nginx (proxy reverso) ─────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: reconengine_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./infra/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - reconengine_net
+
+volumes:
+  db_data:
+  uploads_data:
+
+networks:
+  reconengine_net:
+    driver: bridge

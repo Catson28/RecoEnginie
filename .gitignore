@@ -1,37 +1,38 @@
-# Environment files
-.env
-*.env
-!.env.example
-
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-venv/
+*.pyo
+.env
+.venv/
 env/
-ENV/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+htmlcov/
+.coverage
 
-# Logs
-logs/*.log
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+frontend/.env.local
+
+# Database
+*.db
+*.sqlite
+
+# Docker
 *.log
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Data files
-*.csv
-*.xlsx
-data/
+# IDE
+.vscode/
+.idea/
+*.swp
 
-# Backup files
-backups/
-*.backup
+# Uploads temporários
+backend/uploads/

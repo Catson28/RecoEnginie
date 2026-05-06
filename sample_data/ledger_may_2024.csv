@@ -1,0 +1,31 @@
+ref_id,date,description,amount,currency,category
+TXN-20240501-001,2024-05-01,Wire Transfer — Acme Corp Ltd,45000.00,USD,Accounts Receivable
+TXN-20240501-002,2024-05-01,Invoice Payment — Beta Solutions,12450.00,USD,Revenue
+TXN-20240502-003,2024-05-02,Vendor Payment — Delta Supplies,8750.00,USD,Accounts Payable
+TXN-20240503-004,2024-05-03,Rent — Office HQ May 2024,6500.00,USD,Operating Expenses
+TXN-20240503-005,2024-05-03,Utility Bill — Electricity,1245.80,USD,Operating Expenses
+TXN-20240506-006,2024-05-06,Wire Transfer — Gamma Holdings,95000.00,USD,Investments
+TXN-20240507-007,2024-05-07,Invoice #INV-2045 — Omega Tech,18500.00,USD,Revenue
+TXN-20240508-008,2024-05-08,Payroll Direct Deposit — May 2024,62500.00,USD,Payroll
+TXN-20240509-009,2024-05-09,Insurance Premium — Q2 2024,4800.00,USD,Insurance
+TXN-20240510-010,2024-05-10,Consulting Fees — Alpha Advisory,15000.00,USD,Professional Services
+TXN-20240513-011,2024-05-13,Invoice #INV-2047 — Sigma Corp,7250.00,USD,Revenue
+TXN-20240514-012,2024-05-14,Software Subscription — Annual,2400.00,USD,Technology
+TXN-20240515-013,2024-05-15,Invoice #INV-2089 — Gamma Inc,15500.00,USD,Revenue
+TXN-20240515-014,2024-05-15,Office Supplies Purchase,875.40,USD,Office Expenses
+TXN-20240516-015,2024-05-16,Wire Transfer — Horizon Bank FX,78000.00,USD,FX Transfers
+TXN-20240517-016,2024-05-17,Vendor Payment — Zeta Materials,22100.00,USD,Accounts Payable
+TXN-20240520-017,2024-05-20,Invoice #INV-2091 — Theta Ltd,11300.00,USD,Revenue
+TXN-20240521-018,2024-05-21,Tax Payment — Q1 2024,38500.00,USD,Tax
+TXN-20240522-019,2024-05-22,Marketing Campaign — May,5500.00,USD,Marketing
+TXN-20240523-020,2024-05-23,Invoice #INV-2093 — Lambda Co,9800.00,USD,Revenue
+TXN-20240524-021,2024-05-24,Loan Repayment — Term Loan A,25000.00,USD,Financing
+TXN-20240527-022,2024-05-27,Invoice #INV-2095 — Mu Industries,33400.00,USD,Revenue
+TXN-20240528-023,2024-05-28,Petty Cash Reimbursement,350.00,USD,Miscellaneous
+TXN-20240528-024,2024-05-28,Travel Expenses — Executive Team,4200.00,USD,Travel
+TXN-20240529-025,2024-05-29,Dividend Payment — Shareholders,50000.00,USD,Financing
+TXN-20240530-026,2024-05-30,Wire Transfer — Nu Partners,16750.00,USD,Accounts Payable
+TXN-20240530-027,2024-05-30,Equipment Lease — May,3200.00,USD,Equipment
+TXN-20240531-028,2024-05-31,Invoice #INV-2098 — Xi Global,28900.00,USD,Revenue
+TXN-20240531-029,2024-05-31,Closing Fee — Legal,1800.00,USD,Professional Services
+TXN-20240531-030,2024-05-31,Interest Income — Savings Account,420.15,USD,Interest Income

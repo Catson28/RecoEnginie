@@ -1,0 +1,67 @@
+INFO:     127.0.0.1:60640 - "POST /api/runs HTTP/1.1" 202 Accepted
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 415, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 56, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\fastapi\applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\fastapi\routing.py", line 118, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\fastapi\routing.py", line 105, in app
+    await response(scope, receive, send)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\responses.py", line 167, in __call__
+    await self.background()
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\background.py", line 36, in __call__
+    await task()
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\background.py", line 23, in __call__
+    await run_in_threadpool(self.func, *self.args, **self.kwargs)
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\env\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\app\api\runs.py", line 32, in _execute_run_task
+    from app.core.statement_importer import (
+  File "J:\Projectos 2025\2026\RecoEnginie\backend\app\core\statement_importer.py", line 16, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+INFO:     127.0.0.1:64093 - "OPTIONS /api/matching/cc57b6df-5c86-4fbd-bb5e-aeff17329da6?limit=200 HTTP/1.1" 200 OK
